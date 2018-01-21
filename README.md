@@ -7,7 +7,9 @@ A project skeleton for the django framework (>= 2.0) with authentication system 
 - python >= 3.6
 
 #### Usage
-[Clone the repository](https://github.com/ktsagg/django-auth-skeleton.git) 
+[Clone the repository](https://github.com/ktsagg/django-auth-skeleton.git)
+    
+    git clone https://github.com/ktsagg/django-auth-skeleton.git
 
 Install requirements
 
