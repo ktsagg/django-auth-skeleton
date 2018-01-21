@@ -1,29 +1,29 @@
 # Django auth skeleton
 
-#### Description
+### Description
 A project skeleton for the django framework (>= 2.0) with authentication system ready to use.
 
-#### Prerequisites
+### Prerequisites
 - python >= 3.6
 
-#### Usage
+### Usage
 [Clone the repository](https://github.com/ktsagg/django-auth-skeleton.git)
     
     git clone https://github.com/ktsagg/django-auth-skeleton.git
 
-Install requirements
+###### Install requirements
 
     pip install -r requirements.txt
 
-Migrate the database
+###### Migrate the database
 
     python manage.py migrate
 
-Run the django server with development settings enabled,
+###### Run the django server with development settings enabled,
     
     python manage.py runserver
 
-or with production settings enabled.
+###### or with production settings enabled.
     
     python manage.py runserver --settings=config.settings_production
     
