@@ -110,3 +110,4 @@ atlassian-ide-plugin.xml
 media/cache
 cache
 */config/database.py.sample
+*.sqlite3
