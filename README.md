@@ -1,34 +1,40 @@
-# Django auth skeleton [demo](http://ktsagg.pythonanywhere.com/)
+# Django auth skeleton
 
-### Description
-A project skeleton for the django framework (>= 2.0) with authentication system ready to use.
+[![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
+[![Django Version](https://img.shields.io/badge/django-2.0-brightgreen.svg)](https://djangoproject.com)
 
-### Prerequisites
-- python >= 3.6
+A project skeleton for the django framework with authentication system ready to use. [demo](http://ktsagg.pythonanywhere.com/)
 
-### Usage
-[Clone the repository](https://github.com/ktsagg/django-auth-skeleton.git)
-    
-    git clone https://github.com/ktsagg/django-auth-skeleton.git
+## Running the Project Locally
 
-##### Install requirements
+Clone the repository:
 
-    pip install -r requirements.txt
+```bash
+git clone https://github.com/ktsagg/django-auth-skeleton.git
+```
 
-##### Migrate the database
+Install the requirements:
 
-    python manage.py migrate
+```bash
+pip install -r requirements.txt
+```
 
-##### Run the django server with development settings enabled,
-    
-    python manage.py runserver
+Create the database:
 
-##### or with production settings enabled.
-    
-    python manage.py runserver --settings=config.settings_production
-    
-#### Django server running at http://127.0.0.1:8000/
+```bash
+python manage.py migrate
+```
 
-    
+Run the server with development settings enabled:
 
-    
+```bash
+python manage.py runserver
+```
+
+Or run the server with production settings enabled:
+
+```bash
+python manage.py runserver --settings=config.settings_production
+```
+
+The project will be available at **127.0.0.1:8000**.
