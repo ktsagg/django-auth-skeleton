@@ -1,4 +1,4 @@
-# Django auth skeleton #### [demo](http://ktsagg.pythonanywhere.com/)
+# Django auth skeleton [demo](http://ktsagg.pythonanywhere.com/)
 
 ### Description
 A project skeleton for the django framework (>= 2.0) with authentication system ready to use.
