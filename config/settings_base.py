@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # more apps
+    # 3rd party
     'widget_tweaks',
-    'accounts.apps.AccountsConfig'
+
+    # Project apps
+    'apps.home.apps.HomeConfig',
+    'apps.accounts.apps.AccountsConfig',
 ]
 
 
@@ -141,7 +144,7 @@ STATICFILES_DIRS = [
 
 
 # Login Variables #############################################################
-# LOGIN_URL = 'accounts:login'
+LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
