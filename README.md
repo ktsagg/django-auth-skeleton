@@ -38,3 +38,7 @@ python manage.py runserver --settings=config.settings_production
 ```
 
 The project will be available at **127.0.0.1:8000**.
+
+## License
+
+The source code is released under the [MIT License](https://github.com/ktsagg/django-auth-skeleton/blob/master/LICENSE).
