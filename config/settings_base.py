@@ -38,10 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 3rd party
+    # Extra django apps
+    'django.contrib.admindocs',
+
+    # 3rd party apps
     'widget_tweaks',
 
-    # Project apps
+    # Project's apps
     'apps.home.apps.HomeConfig',
     'apps.accounts.apps.AccountsConfig',
 ]

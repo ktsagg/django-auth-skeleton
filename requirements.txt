@@ -1,5 +1,6 @@
-Django>=2.0
+Django==2.0.2
 django-debug-toolbar==1.9.1
 django-widgets-improved==1.5.0
+docutils==0.14
 pytz==2017.3
 sqlparse==0.2.4
