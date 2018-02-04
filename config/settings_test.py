@@ -17,3 +17,8 @@ DATABASES = {
     }
 }
 
+# Tell Web Server to look for static files in /some/directory/
+# Then you run "manage.py collectstatic" and Django will copy static files from all the apps
+# and from the directories defined in STATICFILES_DIRS to /some/directory/.
+
+# STATIC_ROOT = '/some/directory/'

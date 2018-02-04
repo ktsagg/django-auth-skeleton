@@ -82,6 +82,11 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+
+            # No registration needed if we store the custom tags in:
+            # <application-name>/templatetags/<module-name>.py
+            # Also create an __init__.py, so django is able to load modules.
+
             # Registering the template-tags modules
             'libraries': {
                 'form_tags': 'template_tags.form_tags',
