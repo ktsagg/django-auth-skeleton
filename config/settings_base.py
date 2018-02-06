@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Extra django apps
     'django.contrib.admindocs',
+    'django.forms',  # required for custom widjets
 
     # 3rd party apps
     'widget_tweaks',
@@ -159,3 +160,7 @@ LOGOUT_REDIRECT_URL = 'home'
 
 #
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# Required for custom widjets
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
