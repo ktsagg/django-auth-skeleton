@@ -1,7 +1,16 @@
 # accounts.forms.py
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+
+
+class LoginForm(AuthenticationForm):
+    """
+    Extends the django.contrib.auth.forms.AuthenticationForm
+    to provide a custom label fro username field.
+    """
+    username = forms.CharField(max_length=254, label='Username/Email')
 
 
 class SignUpForm(UserCreationForm):

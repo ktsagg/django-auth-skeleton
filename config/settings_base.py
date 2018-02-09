@@ -152,6 +152,11 @@ STATICFILES_DIRS = [
 ]
 
 
+# Auth Backends ###############################################################
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',  # by default
+                           'apps.accounts.backends.EmailBackend']  # supports user login by email
+
+
 # Login Variables #############################################################
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home'
