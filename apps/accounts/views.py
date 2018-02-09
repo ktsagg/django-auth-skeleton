@@ -1,7 +1,7 @@
 # accounts/views.py
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.contrib.auth.views import (LoginView, LogoutView,
                                        PasswordChangeDoneView,
                                        PasswordChangeView,
@@ -33,7 +33,10 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            # attach authenticated user to the current session
+            # backend keyword is required when there is
+            # more than one authentication backend
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             return redirect('/')
     else:
         form = SignUpForm()
@@ -43,8 +46,8 @@ def signup(request):
 ###############################################################################
 @method_decorator(login_required, name='dispatch')
 class UserUpdateView(UpdateView):
-    model = User
-    fields = ('first_name', 'last_name', 'email', )
+    model = get_user_model()
+    fields = ('first_name', 'last_name', 'email', 'telephone',)
     template_name = 'accounts/my_account.html'
     # success_url = reverse_lazy('accounts:my_account')
     success_url = '/'

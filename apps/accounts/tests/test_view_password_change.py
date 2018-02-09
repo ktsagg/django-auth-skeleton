@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import PasswordChangeForm
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import resolve, reverse
 
@@ -10,6 +10,7 @@ class PasswordChangeTests(TestCase):
     def setUp(self):
         username = 'john'
         password = 'secret123'
+        User = get_user_model()
         user = User.objects.create_user(username=username, email='john@doe.com', password=password)
         url = reverse('accounts:password_change')
         self.client.login(username=username, password=password)
@@ -51,7 +52,8 @@ class PasswordChangeTestCase(TestCase):
     accepts a `data` dict to POST to the view.
     '''
     def setUp(self, data={}):
-        self.user = User.objects.create_user(username='john', email='john@doe.com', password='old_password')
+        self.User = get_user_model()
+        self.user = self.User.objects.create_user(username='john', email='john@doe.com', password='old_password')
         self.url = reverse('accounts:password_change')
         self.client.login(username='john', password='old_password')
         self.response = self.client.post(self.url, data)

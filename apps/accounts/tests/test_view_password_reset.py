@@ -1,6 +1,6 @@
 # from django.contrib.auth import views as auth_views
 from django.contrib.auth.forms import PasswordResetForm
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.core import mail
 from django.test import TestCase
 from django.urls import resolve, reverse
@@ -40,6 +40,7 @@ class PasswordResetTests(TestCase):
 class SuccessfulPasswordResetTests(TestCase):
     def setUp(self):
         email = 'john@doe.com'
+        User = get_user_model()
         User.objects.create_user(username='john', email=email, password='123abcdef')
         url = reverse('accounts:password_reset')
         self.response = self.client.post(url, {'email': email})

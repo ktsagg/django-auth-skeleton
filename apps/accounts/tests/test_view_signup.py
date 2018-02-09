@@ -1,5 +1,5 @@
 # accounts/tests/test_view_signup.py
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import resolve, reverse
 
@@ -52,23 +52,25 @@ class SuccessfulSignUpTests(TestCase):
         self.home_url = '/'
 
     def test_redirection(self):
-        '''
+        """
         A valid form submission should redirect the user to the home page
-        '''
+        """
         self.assertRedirects(self.response, self.home_url)
 
     def test_user_creation(self):
-        self.assertTrue(User.objects.exists())
+        self.User = get_user_model()
+        self.assertTrue(self.User.objects.exists())
 
     def test_user_authentication(self):
-        '''
+        """
         Create a new request to an arbitrary page.
         The resulting response should now have a `user` to its context,
         after a successful sign up.
-        '''
+        """
         response = self.client.get(self.home_url)
         user = response.context.get('user')
         self.assertTrue(user.is_authenticated)
+
 
 ###############################################################################
 class InvalidSignUpTests(TestCase):
@@ -87,4 +89,5 @@ class InvalidSignUpTests(TestCase):
         self.assertTrue(form.errors)
 
     def test_dont_create_user(self):
-        self.assertFalse(User.objects.exists())
+        self.User = get_user_model()
+        self.assertFalse(self.User.objects.exists())

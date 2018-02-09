@@ -157,6 +157,10 @@ AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',  # by de
                            'apps.accounts.backends.EmailBackend']  # supports user login by email
 
 
+# Custom User Model ###########################################################
+AUTH_USER_MODEL = 'accounts.User'
+
+
 # Login Variables #############################################################
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home'
