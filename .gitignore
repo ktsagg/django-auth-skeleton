@@ -107,6 +107,7 @@ atlassian-ide-plugin.xml
 .ropeproject
 
 # Project
+migrations/
 media/cache
 cache
 */config/database.py.sample
